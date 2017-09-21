@@ -33,7 +33,10 @@ private:
 };
 
 
-
+/// <summary>
+/// A <c>DataflowPipeline</c> is a collection of agents of type <c>DataflowAgent</c> that
+/// process messages of type <c>T</c> in a multithreaded serial pipeline.
+/// </summary>
 template< class T>
 class DataflowPipeline
 {
@@ -153,7 +156,7 @@ int main()
     
     printf("[%d] Sending messages\n", GetCurrentThreadId());
 
-    for (auto i = 0; i < 1'000'000; i++)
+    for (auto i = 0; i < 10'000'000; i++)
     {
         auto s = stringstream { };
         s << "Message " << i;
